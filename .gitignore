@@ -17,3 +17,8 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+.htacces
+NOTE.md
+resources/views/auth/brouilon
+resources/views/layouts/brouillon

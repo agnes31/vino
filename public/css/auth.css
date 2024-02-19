@@ -116,6 +116,11 @@
     padding-top: 13rem;
 
 }
+/* use */
+.title_container {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}   
 
 /* pasencore */
 

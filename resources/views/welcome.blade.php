@@ -8,6 +8,7 @@
     <div class="auth-containe">
         <img src="{{ asset('img/logo-site.png') }}" alt="Grappe de raisin-Icône" class="site-logo_welcome">
         <h3>Enrichissez votre collection de vins !</h3>
+        <h2>Dégustez l'Inédit</h2>
         <a href="{{ route('login') }}" class="button log">Se connecter</a>
         <!-- enregistrement  -->
         <div class="input_lign">

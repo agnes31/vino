@@ -6,6 +6,7 @@
     <img src="{{ asset('img/logo-site.png') }}" alt="Grappe de raisin-Icône" class="site-logo_auth">
     <form method="POST" action="{{ route('login') }}" class="form_container">
         @csrf
+        <h3>Connection</h3>
 
         <!-- Email -->
         <div class="input_contain">

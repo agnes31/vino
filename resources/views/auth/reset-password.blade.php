@@ -1,4 +1,9 @@
-<x-guest-layout>
+@extends('layouts/auth')
+@section('title', 'Réinitialisation du mot de passe')
+@section('content')
+@csrf
+
+<div class="background-auth">
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 
@@ -36,4 +41,5 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</div>
+

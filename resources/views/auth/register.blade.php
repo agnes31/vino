@@ -6,7 +6,7 @@
     <img src="{{ asset('img/logo-site.png') }}" alt="Grappe de raisin-Icône" class="site-logo_auth">
     <form method="POST" action="{{ route('register') }}" class="form_container">
         @csrf
-
+        <h3>S'inscrire</h3>
         <!-- Name -->
         <div class="input_contain">
             <x-text-input id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="{{ __('Nom') }}" />

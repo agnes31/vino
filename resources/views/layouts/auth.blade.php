@@ -19,7 +19,6 @@
     <div class="container">
         <div class="login_logo_form">
             <h1>VinExplore</h1>
-            <h2>Dégustez l'Inédit</h2>
         </div>
         <!-- Page Content -->
         <main>

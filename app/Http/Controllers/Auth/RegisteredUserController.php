@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
-        // return redirect(route('login'))->withSuccess('Utilisateur enregistré!');
+        // return redirect(RouteServiceProvider::LOGIN);
         // return redirect()->route('login');
     }
 }

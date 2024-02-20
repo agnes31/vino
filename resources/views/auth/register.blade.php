@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="background-auth">
-    <img src="{{ asset('img/logo-site.png') }}" alt="Grappe de raisin-Icône" class="site-logo_auth">
+    <img src="{{ asset('img/logo-site.png') }}" alt="Grappe de raisin-Icône" class="site-logo_auth">    
     <form method="POST" action="{{ route('register') }}" class="form_container">
         @csrf
         <h3>S'inscrire</h3>

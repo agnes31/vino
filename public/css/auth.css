@@ -22,10 +22,9 @@
     height: 100%;
     background-image: url('/img/logo-vigne.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
 }
-
-/* use  a verrif*/
+/* use  dans auth.blade.php*/
 .login_logo_form {
     display: flex;
     flex-direction: column;
@@ -35,13 +34,14 @@
     margin: auto;
     overflow: hidden;
     position: relative;
+    z-index: 1;
 }
 
 
-/* use  a verrif*/
+/* use  dans auth.blade.php*/
 .login_logo_form {
     margin-top: 40%;
-    top:-2rem;
+    top:auto;
     width: 100%;
     height: auto;
  
@@ -67,6 +67,7 @@
     transform: translate(-97%, -27%);
 }
 
+/* use */
 .site-logo_welcome {
     width: 260px;
     position: absolute;
@@ -167,3 +168,12 @@
         padding: 1rem;
     }
   }
+
+  .status-message {
+    color: green;
+    background-color: #f0f0f0;
+    border: 1px solid green;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}

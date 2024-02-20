@@ -15,12 +15,11 @@
 </head>
 
 <body>
-    <!-- Logo haut -->
+    <!-- Page Content -->
     <div class="container">
         <div class="login_logo_form">
             <h1>VinExplore</h1>
         </div>
-        <!-- Page Content -->
         <main>
             @yield('content')
         </main>

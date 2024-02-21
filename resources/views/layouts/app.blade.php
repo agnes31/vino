@@ -10,16 +10,11 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <!-- Scripts -->
-    <!-- <link href="/css/main.css" rel="stylesheet">
-    <link href="/css/components/navBar.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet" />
 
 </head>
 
 </head>
-
 
 <body>
     <div class="container">
@@ -35,6 +30,29 @@
         </form>
 
         <!-- Nav Bar -->
+
+        <!-- <nav id="navbar">
+            <a href="" class="{{ request()->is('bouteille*') ? 'active':'' }}">
+                <span class="mdi mdi-bottle-wine-outline"></span>
+                <p>Bouteilles</p>
+            </a>
+            <a href="" class="{{ request()->is('cellier*') ? 'active':'' }}">
+                <x-svg.cellarIcon />
+                <p>Celliers</p>
+            </a>
+            <a href="" class="{{ request()->is('favoris*') ? 'active':'' }}">
+                <x-svg.heartIcon />
+                <p>Favoris</p>
+            </a>
+            <a href="" class="{{ request()->is('achats*') ? 'active':'' }}">
+                <x-svg.cartIcon />
+                <p>Achats</p>
+            </a>
+            <a href="" class="{{ request()->is('profil*') ? 'active':'' }}">
+                <x-svg.profilIcon />
+                <p>Profil</p>
+            </a>
+        </nav> -->
 
 
         <!-- Page Content -->

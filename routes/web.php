@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CellarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/cellars', function () {
+    return view('cellars');
+})->middleware(['auth', 'verified'])->name('cellars');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,4 +29,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+// CELLIERS
+Route::get('/cellars', [CellarController::class, 'index'])->name('cellars.index');
+Route::get('/cellars-create', [CellarController::class, 'create'])->name('cellar.create');
+Route::post('/cellars-create', [CellarController::class, 'store'])->name('cellar.store');
+Route::get('/cellars/{cellar}', [CellarController::class, 'show'])->name('cellar.show');
+Route::get('/cellars-edit/{cellar}', [CellarController::class, 'edit'])->name('cellar.edit');
+Route::put('/cellars-edit/{cellar}', [CellarController::class, 'update']);
+Route::delete('/cellars/{cellar}', [CellarController::class, 'destroy']);
+
+require __DIR__ . '/auth.php';

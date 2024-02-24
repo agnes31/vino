@@ -28,7 +28,8 @@
     --color-green: #93BE00;
 
     --color-black: #000000;
-    --color-grey: #e5e5e5;
+    --color-grey: grey;
+    --color-light-grey: rgb(193, 193, 193);
     --color-white: #FFFFFF;
 
     --color-blue: #1F527F;
@@ -62,6 +63,7 @@ h1 {
 
 h2 {
     font-weight: 700;
+    font-family: 'Roberto', serif;
     font-size: var(--font-size-h2);
 }
 
@@ -127,7 +129,7 @@ header {
     width: 100vw;
     left: calc(-50vw + 50%);
     position: relative;
-    background-color: var(--color-dark-red);
+    background-image: url('/img/cellars/cellars.jpeg');
     color: var(--color-white);
     display: flex;
     align-items: center;
@@ -143,7 +145,7 @@ header {
 }
 
 section {
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -176,9 +178,6 @@ form {
  
 }
 
-/* label {
-    font-weight: bold;
-} */
 
 input,
 textarea {
@@ -222,6 +221,45 @@ button:hover, .button:hover {
     color: var(--color-black);
 }
 
+
+/* BUTTONS AJOUTER */
+.add-button {
+    background-color: grey; 
+    color: white; 
+    text-align: center; 
+    text-decoration: none; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: var(--font-size-normal);
+    margin: 18px 24px;
+    cursor: pointer; 
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px; 
+    padding: 0;
+    position: relative;
+    z-index: 2;
+
+}
+/* BUTTONS RETOUR */
+.myReturn {
+    background-color: var(--color-light-grey);
+    border: none;
+    color: white;
+    padding: 10px 20px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: var(--font-size-normal);
+    margin: 4px 2px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: var(--spacing-small) 
+}
+
+
 .log {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     border-color: var(--color-black);
@@ -263,5 +301,3 @@ button:hover, .button:hover {
     position: relative;
     top: 3px;
 }
-
-

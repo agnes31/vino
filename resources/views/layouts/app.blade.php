@@ -12,6 +12,13 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet" />
 
+    <!-- Styles -->
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/auth.css" rel="stylesheet">
+    <link href="/css/components/hamburgerNav.css" rel="stylesheet">
+
+
+
 </head>
 
 </head>
@@ -21,39 +28,24 @@
 
         <!-- Nav haut -->
         <header>
-            <h1>VinExplore</h1>
+
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" style="background: none; border: none;">
+                    <img src="{{ asset('img/logo-site.png') }}" alt="Grappe de raisin-Icône" class="site-logo_header">
+                </button>
+            </form>
+            <h2>VinExplore</h2>
+            <!-- Nav -->
+            <!-- <nav>
+                <ul class="">
+                    <li><a href="/cellars">Celliers</a></li>
+                    <li><a href="/cellars">Celliers</a></li>
+                    <li><a href="/cellars">Celliers</a></li>
+                    <li><a href="/cellars">Celliers</a></li>
+                </ul>
+            </nav> -->
         </header>
-
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit">{{ __('Déconnexion') }}</button>
-        </form>
-
-        <!-- Nav Bar -->
-
-        <!-- <nav id="navbar">
-            <a href="" class="{{ request()->is('bouteille*') ? 'active':'' }}">
-                <span class="mdi mdi-bottle-wine-outline"></span>
-                <p>Bouteilles</p>
-            </a>
-            <a href="" class="{{ request()->is('cellier*') ? 'active':'' }}">
-                <x-svg.cellarIcon />
-                <p>Celliers</p>
-            </a>
-            <a href="" class="{{ request()->is('favoris*') ? 'active':'' }}">
-                <x-svg.heartIcon />
-                <p>Favoris</p>
-            </a>
-            <a href="" class="{{ request()->is('achats*') ? 'active':'' }}">
-                <x-svg.cartIcon />
-                <p>Achats</p>
-            </a>
-            <a href="" class="{{ request()->is('profil*') ? 'active':'' }}">
-                <x-svg.profilIcon />
-                <p>Profil</p>
-            </a>
-        </nav> -->
-
 
         <!-- Page Content -->
         <main>
@@ -63,7 +55,4 @@
         <footer></footer>
     </div>
 </body>
-
-</html>
-
 </html>

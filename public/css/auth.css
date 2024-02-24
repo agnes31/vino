@@ -58,6 +58,10 @@
     bottom: 4rem;
 }
 
+
+/* LOGO */
+
+
 /* use */
 .site-logo_auth {
     width: 260px;
@@ -74,6 +78,14 @@
     top: 190px;
     left: 50%;
     transform: translate(-53%, -49%);
+}
+
+.site-logo_header {
+    width: 260px;
+    position: absolute;
+    top: 414px;
+    left: 50%;
+    transform: translate(-103%, -70%);
 }
 
 /* user */
@@ -177,3 +189,5 @@
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
+

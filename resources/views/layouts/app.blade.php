@@ -15,18 +15,15 @@
     <!-- Styles -->
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/auth.css" rel="stylesheet">
-    <link href="/css/components/hamburgerNav.css" rel="stylesheet">
-
-
 
 </head>
 
 </head>
 
 <body>
-    <div class="container">
+    <div class="">
 
-        <!-- Nav haut -->
+        <!-- Header -->
         <header>
 
             <form method="POST" action="{{ route('logout') }}">
@@ -47,12 +44,13 @@
             </nav> -->
         </header>
 
-        <!-- Page Content -->
+        <!-- Content -->
         <main>
             @yield('content')
         </main>
 
-        <footer></footer>
+        <!-- <footer></footer> -->
     </div>
 </body>
+
 </html>

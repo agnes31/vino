@@ -62,4 +62,12 @@ class CellarController extends Controller
         return view('cellars.edit', ['cellar' => $cellar]);
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Cellar $cellar)
+    {
+        $cellar->delete();
+        return redirect('/cellars')->withSuccess("Le cellier a été effacé");
+    }
 }

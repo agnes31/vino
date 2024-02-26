@@ -99,6 +99,19 @@ a {
     border-radius: 1rem;
     padding: 1rem;
 }
+.grey {
+    background-color: var(--color-light-grey);
+    border: none;
+    color: white;
+    padding: 15px 96px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: var(--spacing-medium);
+}
 
 .highlight {
     text-decoration: underline;
@@ -350,17 +363,6 @@ button:hover, .button:hover {
 
 
 /* DETAIL CELLAR */
-
-/* MODAL */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-  }
-
-/* DETAIL */
 .wineCellar__detail {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

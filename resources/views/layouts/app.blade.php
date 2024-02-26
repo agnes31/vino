@@ -18,7 +18,8 @@
 
 </head>
 
-</head>
+<script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
+
 
 <body>
     <div class="">

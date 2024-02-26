@@ -31,10 +31,10 @@ Route::middleware('auth')->group(function () {
 
 // CELLIERS
 Route::get('/cellars', [CellarController::class, 'index'])->name('cellars.index');
-Route::get('/cellars-create', [CellarController::class, 'create'])->name('cellar.create');
-Route::post('/cellars-create', [CellarController::class, 'store'])->name('cellar.store');
-Route::get('/cellars/{cellar}', [CellarController::class, 'show'])->name('cellar.show');
-Route::get('/cellars-edit/{cellar}', [CellarController::class, 'edit'])->name('cellar.edit');
+Route::get('/cellars-create', [CellarController::class, 'create'])->name('cellars.create');
+Route::post('/cellars-create', [CellarController::class, 'store'])->name('cellars.store');
+Route::get('/cellars/{cellar}', [CellarController::class, 'show'])->name('cellars.show');
+Route::get('/cellars-edit/{cellar}', [CellarController::class, 'edit'])->name('cellars.edit');
 Route::put('/cellars-edit/{cellar}', [CellarController::class, 'update']);
 Route::delete('/cellars/{cellar}', [CellarController::class, 'destroy']);
 

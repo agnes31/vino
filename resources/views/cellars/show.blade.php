@@ -16,7 +16,7 @@
         <p>{{ ucfirst($cellar->description ?? '') }}</p>
 
         <div class="wineCellar__action">
-            <a href="{{route('cellar.edit', $cellar->id)}}" class="blue">Mise à jour</a>
+            <a href="{{route('cellars.edit', $cellar->id)}}" class="blue">Mise à jour</a>
             <a href="" id="openModal" class="red">Supprimer</a>
         </div>
     </div>

@@ -62,8 +62,8 @@ class CellarController extends Controller
         return view('cellars.edit', ['cellar' => $cellar]);
     }
 
-         /**
-     * Enregistrer les modifications de la table de la bd
+    /**
+     * les modifications dans la base de données
      */
     public function update(Request $request, Cellar $cellar)
     {
@@ -79,7 +79,7 @@ class CellarController extends Controller
           'description' => $request->description
         ]);
  
-        // return redirect(route('celliers.show', ['cellier' => $cellier]));
+        // return redirect(route('cellars.show', ['cellar' => $cellar->id]));
         return redirect("cellars/" . $cellar->id);
       }
 

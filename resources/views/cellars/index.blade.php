@@ -7,35 +7,26 @@
 <section class="">
     <h2>Mes celliers</h2>
 
-    <div class="cellar-list">
+    <div class="">
         @forelse($cellars as $cellar)
-
-
-
-
-
-
-
-
-        <!-- <a href="{{route('cellar.show', $cellar->id)}}" class="cellar-card">
-            <h3>{{$cellar->name}}</h3>
-            <p>{{$cellar->description}}</p>
-        </a> -->
-        <table class="table table-striped cellar-card">
-            <tbody>
-                <tr>
-                    <td>
-                        <a href="{{route('cellar.show', $cellar->id)}}">
-                            <span class="mdi mdi-bottle-wine-outline"></span>
+        <a href="{{route('cellar.show', $cellar->id)}}">
+            <span class="mdi mdi-bottle-wine-outline"></span>
+            <table class="table table-striped cellar-card">
+                <tbody>
+                    <tr>
+                        <td>
                             <h3>{{$cellar->name}}</h3>
-                        </a>
-                    </td>
-                    <td>
-                        <p>{{$cellar->description}}</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>{{$cellar->description}}</p>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </a>
         @empty
         <p> <span class="mdi mdi-exclamation-thick"></span> Aucun cellier n'a été créé pour le moment.</p>
         @endforelse

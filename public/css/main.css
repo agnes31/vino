@@ -21,7 +21,7 @@
 
 /* COLOR PALETTE */
     --color-brown: #9B3C18;
-    --color-light-red: #810116;
+    --color-light-red: #dd435d;
     --color-dark-red: #9B3C18;
     --color-deep-maroon: #35000C;
     
@@ -32,7 +32,7 @@
     --color-light-grey: rgb(193, 193, 193);
     --color-white: #FFFFFF;
 
-    --color-blue: #1F527F;
+    --color-blue: #46a3f5;
     --color-purpul: #a14f7480;
 
   
@@ -87,13 +87,17 @@ a {
 }
 
 .red {
-    color: var(--color-light-red);
-    font-weight: 700;
+    background-color: var(--color-light-red);
+    font-weight: 300;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 .blue {
-    color: var(--color-blue);
-    font-weight: 700;
+    background-color: var(--color-blue);
+    font-weight: 300;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 .highlight {
@@ -305,6 +309,8 @@ button:hover, .button:hover {
 }
 
 
+
+
 /* CELLARS */
 .table {
     width: 100%;
@@ -341,3 +347,39 @@ button:hover, .button:hover {
     font-size: 24px;
     margin-right: 10px;
 }
+
+
+/* DETAIL CELLAR */
+
+/* MODAL */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+  }
+
+/* DETAIL */
+.wineCellar__detail {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--color-light-pink);
+    padding: var(--spacing-medium);
+    border-radius: 10px;
+    gap: 0.5rem;
+    color: black;
+}
+
+.wineCellar__action {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: var(--spacing-medium);
+    margin-top: var(--spacing-extra-large);
+}
+

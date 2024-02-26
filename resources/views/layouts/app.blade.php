@@ -18,7 +18,9 @@
 
 </head>
 
-<script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
+<!-- <script src="/js/main.js"></script> -->
+
+
 
 
 <body>
@@ -52,6 +54,7 @@
 
         <!-- <footer></footer> -->
     </div>
+    <script src="/js/modale.js"></script>
 </body>
 
 </html>

@@ -62,6 +62,27 @@ class CellarController extends Controller
         return view('cellars.edit', ['cellar' => $cellar]);
     }
 
+         /**
+     * Enregistrer les modifications de la table de la bd
+     */
+    public function update(Request $request, Cellar $cellar)
+    {
+ 
+        // Valider les données
+         $request->validate([
+        'name'             => 'required|min:2|max:50',
+        'description'      => 'nullable|min:2|max:500'
+                ]);
+ 
+        $cellar->update([
+          'name' => $request->name,
+          'description' => $request->description
+        ]);
+ 
+        // return redirect(route('celliers.show', ['cellier' => $cellier]));
+        return redirect("cellars/" . $cellar->id);
+      }
+
     /**
      * Remove the specified resource from storage.
      */

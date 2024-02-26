@@ -370,7 +370,7 @@ button:hover, .button:hover {
     align-items: center;
     justify-items: center;
     background-color: var(--color-light-pink);
-    padding: var(--spacing-medium);
+    padding: var(--spacing-small);
     border-radius: 10px;
     gap: 0.5rem;
     color: black;

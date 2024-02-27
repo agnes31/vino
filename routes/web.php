@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CellarController;
+use App\Http\Controllers\BottleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,5 +38,8 @@ Route::get('/cellars/{cellar}', [CellarController::class, 'show'])->name('cellar
 Route::get('/cellars-edit/{cellar}', [CellarController::class, 'edit'])->name('cellars.edit');
 Route::put('/cellars-edit/{cellar}', [CellarController::class, 'update']);
 Route::delete('/cellars/{cellar}', [CellarController::class, 'destroy']);
+
+// BOUTEILLES
+Route::get('/bottles', [BottleController::class, 'index'])->name('bottles.index');
 
 require __DIR__ . '/auth.php';

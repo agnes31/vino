@@ -1,48 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts/app')
+@section('title', 'Liste des Bouteilles')
+@section('content')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Bouteilles</title>
-</head>
+<section>
+    <h2>Liste des Bouteilles</h2>
 
-<body>
-    <h1>Liste des Bouteilles</h1>
-
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nom</th>
-                <th>Image</th>
-                <th>Code SAQ</th>
-                <th>Pays</th>
-                <th>Description</th>
-                <th>Prix SAQ</th>
-            </tr>
-        </thead>
-        <tbody> @foreach($bottles as $bottle) <tr>
-                <td>{{ $bottle->id }}</td>
-                <td>{{$bottle->name }}</td>
-                <td>
-                    @if($bottle->image)
-                    <img src="{{ $bottle->image }}" alt="{{ $bottle->nom }}" width="100">
-                    @else
-                    Pas d'image
-                    @endif
-                </td>
-                <td>{{ $bottle->code_saq }}</td>
-                <td>{{ $bottle->country }}</td>
-                <td>{{ $bottle->description }}</td>
-                <td>{{ $bottle->price }} $</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-</body>
-
-</html>
-{{ $bottles }}
+    @foreach($bottles as $bottle)
+    <div style="display: flex; margin-bottom: 20px;">
+        <div>
+            @if($bottle->image)
+            <img src="{{ $bottle->image }}" alt="{{ $bottle->nom }}" style="max-width: 100px; height: auto;">
+            @else
+            Pas d'image
+            @endif
+        </div>
+        <div style="flex-grow: 1; margin-left: 20px;">
+            <div style="font-weight: bold; margin-bottom: 10px;">{{ $bottle->name }}</div>
+            <div>ID: {{ $bottle->id }}</div>
+            <div>Code SAQ: {{ $bottle->code_saq }}</div>
+            <div>Pays: {{ $bottle->country }}</div>
+            <div>Description: {{ $bottle->description }}</div>
+            <div>Prix SAQ: {{ $bottle->price }} $</div>
+        </div>
+    </div>
+    @endforeach
+    {{ $bottles }}
+</section>
+@endsection

@@ -13,7 +13,7 @@ class BottleController extends Controller
      */
     public function index()
     {
-        $bottles = Bottle::orderBy('created_at', 'desc')->paginate(10);
+        $bottles = Bottle::orderBy('created_at', 'desc')->paginate(6);
         return view('bottles.index', ['bottles' => $bottles]);
     }
 
@@ -68,7 +68,7 @@ class BottleController extends Controller
     public function pagination()
     {
 
-        $bottles = Bottle::paginate(10);
+        $bottles = Bottle::paginate(6);
         return view('bottles.index', ['bottles' => $bottles]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bottle;
+use App\Models\Cellar;
 use Illuminate\Support\Facades\Auth;
 
 class BottleController extends Controller
@@ -13,8 +14,9 @@ class BottleController extends Controller
      */
     public function index()
     {
+       
         $bottles = Bottle::orderBy('created_at', 'desc')->paginate(6);
-        return view('bottles.index', ['bottles' => $bottles]);
+        return view('bottles.list', ['bottles' => $bottles]);
     }
 
     /**

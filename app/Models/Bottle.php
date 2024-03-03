@@ -12,6 +12,7 @@ class Bottle extends Model
     protected $table = 'saq_bottles';
 
     protected $fillable = [
+        'id',
         'name',
         'image',
         'code_saq',
@@ -20,11 +21,11 @@ class Bottle extends Model
         'price',
         'url_saq',
         'format',
-        'types_id',
+        'type_id',
     ];
 
     public function type()
     {
-        return $this->belongsTo(Type::class, 'types_id');
+        return $this->belongsTo(Type::class, 'type_id');
     }
 }

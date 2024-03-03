@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bottle;
-use App\Models\Cellar;
-use Illuminate\Support\Facades\Auth;
+
 
 class BottleController extends Controller
 {

@@ -2,16 +2,20 @@
 @section('title', 'Mes celliers')
 @section('content')
 
-
-
-<section class="">
+<section class="background_show">
     <h2>Mes celliers</h2>
 
-    <div class="">
+    <!-- // Lien pour créer un nouveau cellier -->
+    <a href="{{route('cellars.create')}}" class="add-cellar">
+        <span class="mdi mdi-plus-box-outline add-cellar-icon"></span>
+        Ajouter un cellier
+    </a>
+
+    <!-- // Conteneur pour les celliers -->
+    <div class="contenue">
         @forelse($cellars as $cellar)
         <a href="{{route('cellars.show', $cellar->id)}}">
-            <span class="mdi mdi-bottle-wine-outline"></span>
-            <table class="table table-striped cellar-card">
+            <table class="table table-striped cercle">
                 <tbody>
                     <tr>
                         <td>
@@ -28,17 +32,8 @@
             </table>
         </a>
         @empty
-        <p> <span class="mdi mdi-exclamation-thick"></span> Aucun cellier n'a été créé pour le moment.</p>
+        <p><span class="mdi mdi-exclamation-thick"></span> Aucun cellier n'a été créé pour le moment.</p>
         @endforelse
-
-        <a href="{{route('cellars.create')}}" style="display: flex; align-items: center;">
-            <button class="add-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <span>Ajouter un cellier</span>
-        </a>
+    </div>
 </section>
 @endsection

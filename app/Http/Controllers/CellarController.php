@@ -63,25 +63,24 @@ class CellarController extends Controller
     }
 
     /**
-     * les modifications dans la base de données
+     * les modifications de la table de la bd
      */
     public function update(Request $request, Cellar $cellar)
     {
-
+ 
         // Valider les données
-        $request->validate([
-            'name'             => 'required|min:2|max:50',
-            'description'      => 'nullable|min:2|max:500'
-        ]);
-
+         $request->validate([
+        'name'             => 'required|min:2|max:50',
+        'description'      => 'nullable|min:2|max:500'
+                ]);
+ 
         $cellar->update([
-            'name' => $request->name,
-            'description' => $request->description
+          'name' => $request->name,
+          'description' => $request->description
         ]);
-
-        // return redirect(route('cellars.show', ['cellar' => $cellar->id]));
+        
         return redirect("cellars/" . $cellar->id);
-    }
+      }
 
     /**
      * Remove the specified resource from storage.

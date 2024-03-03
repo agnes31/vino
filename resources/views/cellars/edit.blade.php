@@ -2,7 +2,7 @@
 @section('title', 'Mise à jour du cellier')
 @section('content')
 
-<section>
+<section class="background_show">
     <!-- Retour -->
     <a href="{{route('cellars.show', $cellar->id)}}" class="myReturn">← Retour</a>
 
@@ -13,7 +13,7 @@
     </div>
 
     <!--Modifiant du cellier -->
-    <form method="post">
+    <form class="form_cellar" method="post">
         @csrf
         @method('put')
         <div class="input_contain">
@@ -32,8 +32,7 @@
             </div>
             @endif
         </div>
-        <input type="submit" class="button log" value="Modifier">
+        <input type="submit" class="submit-button" value="Modifier">
     </form>
 </section>
-
 @endsection

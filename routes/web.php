@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CellarController;
 use App\Http\Controllers\BottleController;
+use App\Http\Controllers\WineRoomController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,11 @@ Route::put('/cellars-edit/{cellar}', [CellarController::class, 'update']);
 Route::delete('/cellars/{cellar}', [CellarController::class, 'destroy']);
 
 // BOUTEILLES
-Route::get('/bottles', [BottleController::class, 'index'])->name('bottles.index');
+Route::get('/bottles', [BottleController::class, 'index'])->name('bottles.list');
+
+// BOUTEILLES CELLIER
+Route::delete('/bottlesCellar/delete', [WineRoomController::class, 'destroy']);
+Route::get('/bottlesCellar/add/{cellar}', [WineRoomController::class, 'addBottleToCellar'])->name('bottlesCellar.addBottleToCellar');
+Route::post('/bottlesCellar/add/{cellar}', [WineRoomController::class, 'add'])->name('bottlesCellar.add');
 
 require __DIR__ . '/auth.php';

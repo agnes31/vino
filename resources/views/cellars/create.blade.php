@@ -2,14 +2,14 @@
 @section('title', 'Créer cellier')
 @section('content')
 
-<section>
+<section class="background_show">
     <!-- Retour -->
     <a href="{{route('cellars.index')}}" class="myReturn">← Retour</a>
 
     <h2>Créer un cellier</h2>
 
     <!-- Formulaire cellier -->
-    <form method="post">
+    <form class="form_cellar" method="post">
         @csrf
         <div class="input_contain">
             <input type="text" id="name" name="name" value="{{old('name')}}" required placeholder="{{ __('Nom') }}">
@@ -27,9 +27,7 @@
             </div>
             @endif
         </div>
-        <input type="submit" class="button log" value="Ajouter">
+        <input type="submit" class="submit-button" value="Ajouter">
     </form>
-
 </section>
-
 @endsection

@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name') }} - @yield('title')</title>
 
     <!-- Fonts -->
@@ -15,45 +14,33 @@
     <!-- Styles -->
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/auth.css" rel="stylesheet">
+    <link href="/css/components/nav.css" rel="stylesheet">
 
 </head>
 
-
-
-
-
 <body>
-    <div class="">
+    <!-- Header -->
+    <header>
+        <img src="{{ asset('img/logo-site.png') }}" alt="Grappe de raisin-Icône" class="site-logo_header">
+    
+        <h2>VinExplore</h2>
 
-        <!-- Header -->
-        <header>
+    </header>
+    <nav class="navi">
+        <input type="checkbox">
+        <div>
+            <a class="" href="{{route('cellars.index')}}"><span class="mdi mdi-liquor"></span>Celliers</a>
+            <a class="" href="{{route('bottles.list')}}"><span class="mdi mdi-magnify"></span>Recherche</a>
+            <a href="{{ route('logout') }}"><span class="mdi mdi-logout"></span>Déconnexion</a>
+        </div>
+    </nav>
+    <!-- Content -->
+    <main>
+        @yield('content')
+    </main>
 
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" style="background: none; border: none;">
-                    <img src="{{ asset('img/logo-site.png') }}" alt="Grappe de raisin-Icône" class="site-logo_header">
-                </button>
-            </form>
-            <h2>VinExplore</h2>
-            <!-- Nav -->
-            <!-- <nav>
-                <ul class="">
-                    <li><a href="/cellars">Celliers</a></li>
-                    <li><a href="/cellars">Celliers</a></li>
-                    <li><a href="/cellars">Celliers</a></li>
-                    <li><a href="/cellars">Celliers</a></li>
-                </ul>
-            </nav> -->
-        </header>
-
-        <!-- Content -->
-        <main>
-            @yield('content')
-        </main>
-
-        <!-- <footer></footer> -->
-    </div>
     <script src="/js/modale.js"></script>
+
 </body>
 
 </html>

@@ -10,12 +10,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Obtenez l'élément <span> qui ferme le modal
     var span = document.getElementById("closeModal");
-    
+
     // Obtenez le bouton "Annuler"
     var btnCancel = document.getElementById("closeModale");
 
     // Quand l'utilisateur clique sur le bouton, ouvrez le modal 
     btn.onclick = function(event) {
+        console.log('click');
         event.preventDefault();
         modal.style.display = "block";
         overlay.style.display = "block";

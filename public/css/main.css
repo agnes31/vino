@@ -21,18 +21,23 @@
 
 /* COLOR PALETTE */
     --color-brown: #9B3C18;
-    --color-light-red: #dd435d;
+    --color-light-red: #ed4461;
+    --color-rose: #bda7a7;
+    --color-bordeaux: #800020;
     --color-dark-red: #9B3C18;
     --color-deep-maroon: #35000C;
+    --color-brown:#56312e;
     
-    --color-green: #93BE00;
+    --color-green: #65d3b7;
 
     --color-black: #000000;
     --color-grey: grey;
     --color-light-grey: rgb(193, 193, 193);
     --color-white: #FFFFFF;
 
+    
     --color-blue: #46a3f5;
+    --color-beige: #d3b88c;
     --color-purpul: #a14f7480;
 
   
@@ -75,11 +80,20 @@ h3 {
 }
 
 /* HYPERLINKS */
+
 a {
     color: var(--color-black);
     transition: var(--transition);
 }
-  
+
+select {
+    padding: 0.5rem;
+    border: 1px solid #999898;
+    border-radius: 0.5rem;
+    font-size: var(--font-size-normal);
+    z-index: 2;
+}
+
 .cta-link:hover {
     text-decoration: underline;
     z-index: 2; 
@@ -89,6 +103,7 @@ a {
 .red {
     background-color: var(--color-light-red);
     font-weight: 300;
+    font-size: var(--font-size-normal);
     border-radius: 1rem;
     padding: 1rem;
 }
@@ -103,11 +118,11 @@ a {
     background-color: var(--color-light-grey);
     border: none;
     color: white;
-    padding: 15px 96px;
+    padding: 15px 50px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: var(--font-size-normal);
     margin: 4px 2px;
     cursor: pointer;
     margin-top: var(--spacing-medium);
@@ -184,6 +199,7 @@ footer {
 }
 
 /* FORM */
+
 form {
     display: flex;
     flex-direction: column;
@@ -211,6 +227,20 @@ textarea {
     text-align: center;
     color: var(--color-light-red);
     font-weight: bold;
+}
+
+.form_cellar {
+    background-color:#452828;
+    /* background-color: #f2f2f2;   */
+    padding: 20px; /* Espace intérieur du formulaire */
+    border-radius: 5px; 
+}
+
+.input_contain input, .input_contain textarea {
+    width: 100%; /* Largeur du champ de saisie */
+    padding: 10px; /* Espace intérieur du champ de saisie */
+    border: 1px solid #ccc; /* Bordure du champ de saisie */
+    border-radius: 4px; /* Coins arrondis du champ de saisie */
 }
 
 /* BUTTONS */
@@ -242,28 +272,33 @@ button:hover, .button:hover {
 
 
 /* BUTTONS AJOUTER */
-.add-button {
-    background-color: grey; 
-    color: white; 
-    text-align: center; 
-    text-decoration: none; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    font-size: var(--font-size-normal);
-    margin: 18px 24px;
-    cursor: pointer; 
-    border-radius: 50%; 
-    width: 50px; 
-    height: 50px; 
-    padding: 0;
-    position: relative;
-    z-index: 2;
-
+.add-cellar {
+    display: flex;
+    align-items: center;
+    margin-left: var(--spacing-double-extra-large);
 }
+
+.add-cellar-icon {
+    font-size: 2em;
+    color: var(--color-black);
+}
+
+/* SUMMIT BUTTON */
+
+.submit-button {
+    background-color: var(--color-bordeaux);
+    color: var(--color-white);
+    border-radius: 5px;
+    margin-top: var(--spacing-medium);
+    padding: 10px;
+    border: none;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+
 /* BUTTONS RETOUR */
 .myReturn {
-    background-color: var(--color-light-grey);
+    /* background-color: var(--color-light-grey); */
+    background-color: rgb(139 25 25);
     border: none;
     color: white;
     padding: 10px 20px; 
@@ -321,6 +356,11 @@ button:hover, .button:hover {
     top: 3px;
 }
 
+.large-icon {
+    font-size: 1.5em; 
+}
+
+
 
 
 
@@ -330,6 +370,7 @@ button:hover, .button:hover {
     margin-bottom: 1rem;
     color: #212529;
     border-collapse: collapse;
+    background-color: var(--color-beige);
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
@@ -346,6 +387,7 @@ button:hover, .button:hover {
     border-radius: 5px;
     text-decoration: none;
     color: inherit;
+   
 }
 
 .cellar-card h3 {
@@ -385,3 +427,54 @@ button:hover, .button:hover {
     margin-top: var(--spacing-extra-large);
 }
 
+
+.contenue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cercle {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #800000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* TABLEAU BOUTEILLES */
+
+.bottle {
+    display: flex;
+    align-items: start;
+    padding: var(--spacing-small);
+}
+
+.bottle-image {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.bottle-description {
+    flex: 2;
+    line-height: 1.2;
+ 
+}
+
+/* SECTION */
+
+.background_show {
+
+    background-color: var(--color-rose);
+    padding: 29px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}

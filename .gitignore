@@ -18,7 +18,10 @@ yarn-error.log
 /.idea
 /.vscode
 
-.htacces
+
 NOTE.md
 resources/views/auth/brouilon
 resources/views/layouts/brouillon
+.DS_Store
+.htaccess
+.htacces

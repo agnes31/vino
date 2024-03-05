@@ -40,7 +40,7 @@ Route::get('/cellars-edit/{cellar}', [CellarController::class, 'edit'])->name('c
 Route::put('/cellars-edit/{cellar}', [CellarController::class, 'update']);
 Route::delete('/cellars/{cellar}', [CellarController::class, 'destroy']);
 
-// BOUTEILLES
+// BOUTEILLES   
 Route::get('/bottles', [BottleController::class, 'index'])->name('bottles.list');
 
 // BOUTEILLES CELLIER

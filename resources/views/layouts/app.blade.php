@@ -18,11 +18,11 @@
 
 </head>
 
-<body>
+<body class="">
     <!-- Header -->
     <header>
         <img src="{{ asset('img/logo-site.png') }}" alt="Grappe de raisin-Icône" class="site-logo_header">
-    
+
         <h2>VinExplore</h2>
 
     </header>

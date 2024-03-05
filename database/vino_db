@@ -1,0 +1,200 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema e2395321
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema e2395321
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `e2395321` DEFAULT CHARACTER SET utf8 ;
+USE `e2395321` ;
+
+-- -----------------------------------------------------
+-- Table `e2395321`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `e2395321`.`users` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `email_verified_at` TIMESTAMP NULL DEFAULT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `remember_token` VARCHAR(100) NULL DEFAULT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `users_email_unique` (`email` ASC))
+ENGINE = InnoDB
+AUTO_INCREMENT = 3
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `e2395321`.`cellars`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `e2395321`.`cellars` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(250) NOT NULL,
+  `description` VARCHAR(300) NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `user_id` BIGINT(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_cellars_users1_idx` (`user_id` ASC),
+  CONSTRAINT `fk_cellars_users1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `e2395321`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 52
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `e2395321`.`failed_jobs`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `e2395321`.`failed_jobs` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` VARCHAR(255) NOT NULL,
+  `connection` TEXT NOT NULL,
+  `queue` TEXT NOT NULL,
+  `payload` LONGTEXT NOT NULL,
+  `exception` LONGTEXT NOT NULL,
+  `failed_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `failed_jobs_uuid_unique` (`uuid` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `e2395321`.`migrations`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `e2395321`.`migrations` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` VARCHAR(255) NOT NULL,
+  `batch` INT(11) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 15
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `e2395321`.`password_reset_tokens`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `e2395321`.`password_reset_tokens` (
+  `email` VARCHAR(255) NOT NULL,
+  `token` VARCHAR(255) NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (`email`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `e2395321`.`personal_access_tokens`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `e2395321`.`personal_access_tokens` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `tokenable_type` VARCHAR(255) NOT NULL,
+  `tokenable_id` BIGINT(20) UNSIGNED NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `token` VARCHAR(64) NOT NULL,
+  `abilities` TEXT NULL DEFAULT NULL,
+  `last_used_at` TIMESTAMP NULL DEFAULT NULL,
+  `expires_at` TIMESTAMP NULL DEFAULT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `personal_access_tokens_token_unique` (`token` ASC),
+  INDEX `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type` ASC, `tokenable_id` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `e2395321`.`types`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `e2395321`.`types` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(20) NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `e2395321`.`saq_bottles`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `e2395321`.`saq_bottles` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `image` VARCHAR(200) NOT NULL,
+  `code_saq` VARCHAR(50) NULL DEFAULT NULL,
+  `country` VARCHAR(50) NULL DEFAULT NULL,
+  `description` TEXT NULL DEFAULT NULL,
+  `price` DOUBLE NOT NULL,
+  `url_saq` VARCHAR(200) NOT NULL,
+  `format` VARCHAR(50) NULL DEFAULT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `type_id` BIGINT(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `saq_bottles_code_saq_unique` (`code_saq` ASC),
+  INDEX `saq_bottles_types_id_foreign` (`type_id` ASC),
+  CONSTRAINT `saq_bottles_types_id_foreign`
+    FOREIGN KEY (`type_id`)
+    REFERENCES `e2395321`.`types` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 90
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
+
+-- -----------------------------------------------------
+-- Table `e2395321`.`wine_rooms`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `e2395321`.`wine_rooms` (
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `quantity` INT(11) NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `cellar_id` BIGINT(20) UNSIGNED NOT NULL,
+  `saq_bottle_id` BIGINT(20) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `wine_rooms_cellars_id_foreign` (`cellar_id` ASC),
+  INDEX `wine_rooms_saq_bottles_id_foreign` (`saq_bottle_id` ASC),
+  CONSTRAINT `wine_rooms_cellars_id_foreign`
+    FOREIGN KEY (`cellar_id`)
+    REFERENCES `e2395321`.`cellars` (`id`),
+  CONSTRAINT `wine_rooms_saq_bottles_id_foreign`
+    FOREIGN KEY (`saq_bottle_id`)
+    REFERENCES `e2395321`.`saq_bottles` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 21
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

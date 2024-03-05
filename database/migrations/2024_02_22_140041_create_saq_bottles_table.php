@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('url_saq', 200);
             $table->string('format', 50)->nullable();
             $table->timestamps();
-            $table->bigInteger('types_id')->unsigned()->nullable();
+            $table->bigInteger('type_id')->unsigned()->nullable();
 
             $table->foreign('types_id')->references('id')->on('types');
         });

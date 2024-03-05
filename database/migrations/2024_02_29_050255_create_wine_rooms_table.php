@@ -14,17 +14,12 @@ return new class extends Migration
         Schema::create('wine_rooms', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
-            $table->date('purchase_date');
-            $table->date('revoke_date')->nullable();
-            $table->year('vintage')->nullable();
-            $table->string('notes', 100)->nullable();
             $table->timestamps();
-            $table->bigInteger('cellars_id')->unsigned()->nullable();
-            $table->bigInteger('saq_bottles_id')->unsigned()->nullable();
+            $table->bigInteger('cellar_id')->unsigned()->nullable();
+            $table->bigInteger('saq_bottle_id')->unsigned()->nullable();
 
-            $table->foreign('cellars_id')->references('id')->on('cellars');
-            $table->foreign('saq_bottles_id')->references('id')->on('saq_bottles');
-
+            $table->foreign('cellar_id')->references('id')->on('cellars');
+            $table->foreign('saq_bottle_id')->references('id')->on('saq_bottles');
         });
     }
 
